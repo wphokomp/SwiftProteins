@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     
     var ligandArr = [Ligand]()
-    var cuurentLigandArr = [Ligand]()
+    var currentLigandArr = [Ligand]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +32,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ligandArr.append(Ligand(name: "VU2", image: "L3"))
         ligandArr.append(Ligand(name: "ZYJ", image: "L4"))
         
-        cuurentLigandArr = ligandArr
+        currentLigandArr = ligandArr
 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cuurentLigandArr.count
+        return currentLigandArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableCell else {
             return UITableViewCell()
         }
-        cell.nameLbl.text = cuurentLigandArr[indexPath.row].name
-        cell.imgView.image = UIImage(named: cuurentLigandArr[indexPath.row].image)
+        cell.nameLbl.text = currentLigandArr[indexPath.row].name
+        cell.imgView.image = UIImage(named: currentLigandArr[indexPath.row].image)
         return cell
     }
     
@@ -55,15 +55,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     //search barr
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        cuurentLigandArr = ligandArr.filter({ ligand -> Bool in
-            guard let text = searchBar.text else { return false }
-            return ligand.name.contains(text)
+        guard !searchText.isEmpty else {
+            currentLigandArr = ligandArr
+            TableView.reloadData()
+            return
+        }
+        currentLigandArr = ligandArr.filter({ ligand -> Bool in
+            return ligand.name.lowercased().contains(searchText.lowercased())
         })
         TableView.reloadData()
     }
 
     public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
+        switch selectedScope {
+        case 0:
+            currentLigandArr = ligandArr //get all ligands
+        case 1:
+            currentLigandArr = ligandArr
+//            currentLigandArr = currentLigandArr.filter({ textLigand -> Bool in
+//                //get ligands with just text
+//                return
+//            })
+        case 2:
+            currentLigandArr = ligandArr
+//            currentLigandArr = currentLigandArr.filter({ numLigand -> Bool in
+//                //get ligands with just number
+//                return
+//            })
+        default:
+            break
+        }
+        TableView.reloadData()
     }
 }
 
