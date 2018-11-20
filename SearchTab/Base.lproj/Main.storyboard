@@ -28,6 +28,9 @@
                                         <string>XAN</string>
                                         <string>VU3</string>
                                     </scopeButtonTitles>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="7Ec-wx-Y92"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="114" id="a2M-bh-LkZ" customClass="TableCell" customModule="SearchTab" customModuleProvider="target">
