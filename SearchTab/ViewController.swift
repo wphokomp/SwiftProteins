@@ -36,13 +36,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         do {
             fileContent = try String(contentsOfFile: fileURL!, encoding: String.Encoding.utf8)
             ligFile = fileContent.components(separatedBy: "\n") as [String]
-            print("\(ligFile)")
         } catch let error as NSError {
             print("Failed to read file")
             print(error)
         }
-//        print(fileContent)
-        print("file ended")
     }
     
     private func setSearchBar() {
