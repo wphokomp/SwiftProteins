@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B24367121A2E2C500853F0A /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24367021A2E2C500853F0A /* TableCell.swift */; };
+		3BA7DBDA21A5572200D9D8C2 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BA7DBD921A5572200D9D8C2 /* ligands.txt */; };
 		3BCAD12C219C20EF006C0F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAD12B219C20EF006C0F6D /* AppDelegate.swift */; };
 		3BCAD12E219C20EF006C0F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAD12D219C20EF006C0F6D /* ViewController.swift */; };
 		3BCAD131219C20EF006C0F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAD12F219C20EF006C0F6D /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3B24367021A2E2C500853F0A /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		3BA7DBD921A5572200D9D8C2 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		3BCAD128219C20EF006C0F6D /* SearchTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCAD12B219C20EF006C0F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCAD12D219C20EF006C0F6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3BCAD134219C20F6006C0F6D /* LaunchScreen.storyboard */,
 				3BCAD137219C20F6006C0F6D /* Info.plist */,
 				3B24367021A2E2C500853F0A /* TableCell.swift */,
+				3BA7DBD921A5572200D9D8C2 /* ligands.txt */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				3BCAD136219C20F6006C0F6D /* LaunchScreen.storyboard in Resources */,
 				3BCAD133219C20F6006C0F6D /* Assets.xcassets in Resources */,
 				3BCAD131219C20EF006C0F6D /* Main.storyboard in Resources */,
+				3BA7DBDA21A5572200D9D8C2 /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

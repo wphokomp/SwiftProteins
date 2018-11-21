@@ -15,23 +15,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var ligandArr = [Ligand]()
     var currentLigandArr = [Ligand]()
+    var ligFile = [String]()
+    var imgFile = ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L10", "L11", "L12"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLigandsFile()
         setLigands()
         setSearchBar()
+    }
+    
+    private func genRand() -> String {
+        let randomName: String = imgFile.randomElement()!
+        return randomName
+    }
+    private func getLigandsFile() {
+        //read from file
+        let fileURL = Bundle.main.path(forResource: "ligands", ofType: "txt")
+        var fileContent = ""
+        do {
+            fileContent = try String(contentsOfFile: fileURL!, encoding: String.Encoding.utf8)
+            ligFile = fileContent.components(separatedBy: "\n") as [String]
+            print("\(ligFile)")
+        } catch let error as NSError {
+            print("Failed to read file")
+            print(error)
+        }
+//        print(fileContent)
+        print("file ended")
     }
     
     private func setSearchBar() {
         searchBar.delegate = self
     }
     private func setLigands() {
-        ligandArr.append(Ligand(name: "XAN", image: "L0"))
-        ligandArr.append(Ligand(name: "VU3", image: "L1"))
-        ligandArr.append(Ligand(name: "YL3", image: "L2"))
-        ligandArr.append(Ligand(name: "VU2", image: "L3"))
-        ligandArr.append(Ligand(name: "ZYJ", image: "L4"))
-        
+        for i in 0..<ligFile.count {
+            ligandArr.append(Ligand(name: ligFile[i], image: genRand()))
+        }
         currentLigandArr = ligandArr
 
     }
