@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1EE14221A42E36001AC4A6 /* Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1EE14121A42E36001AC4A6 /* Bond.swift */; };
+		2B25E9F921A2B5B400BB8908 /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25E9F821A2B5B400BB8908 /* Atoms.swift */; };
+		2B25E9FB21A2B95400BB8908 /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25E9FA21A2B95400BB8908 /* Molecules.swift */; };
+		2B25E9FD21A2F07A00BB8908 /* NobleAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25E9FC21A2F07A00BB8908 /* NobleAtom.swift */; };
+		2B25E9FF21A2F9BA00BB8908 /* LigandData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25E9FE21A2F9BA00BB8908 /* LigandData.swift */; };
 		2B2F612B2199B5EC005C7465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F612A2199B5EC005C7465 /* AppDelegate.swift */; };
 		2B2F612D2199B5EC005C7465 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F612C2199B5EC005C7465 /* ViewController.swift */; };
 		2B2F61302199B5EC005C7465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F612E2199B5EC005C7465 /* Main.storyboard */; };
@@ -14,6 +19,8 @@
 		2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F61332199B609005C7465 /* LaunchScreen.storyboard */; };
 		2B2F61402199B60B005C7465 /* ProteinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F613F2199B60B005C7465 /* ProteinsTests.swift */; };
 		2B2F614B2199B60B005C7465 /* ProteinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */; };
+		2BF26F3121A6CD8300F1BD68 /* ElementInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */; };
+		2BF26F3321A6D93100F1BD68 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BF26F3221A6D93100F1BD68 /* PeriodicTableJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1EE14121A42E36001AC4A6 /* Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bond.swift; sourceTree = "<group>"; };
+		2B25E9F821A2B5B400BB8908 /* Atoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atoms.swift; sourceTree = "<group>"; };
+		2B25E9FA21A2B95400BB8908 /* Molecules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
+		2B25E9FC21A2F07A00BB8908 /* NobleAtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NobleAtom.swift; sourceTree = "<group>"; };
+		2B25E9FE21A2F9BA00BB8908 /* LigandData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandData.swift; sourceTree = "<group>"; };
 		2B2F61272199B5EC005C7465 /* Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2F612A2199B5EC005C7465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B2F612C2199B5EC005C7465 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +59,8 @@
 		2B2F61462199B60B005C7465 /* ProteinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProteinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsUITests.swift; sourceTree = "<group>"; };
 		2B2F614C2199B60B005C7465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementInfo.swift; sourceTree = "<group>"; };
+		2BF26F3221A6D93100F1BD68 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 				2B2F613E2199B60B005C7465 /* ProteinsTests */,
 				2B2F61492199B60B005C7465 /* ProteinsUITests */,
 				2B2F61282199B5EC005C7465 /* Products */,
+				BFD31C5B68DF34E9B79AD5D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +112,19 @@
 		2B2F61292199B5EC005C7465 /* Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				2BF26F3221A6D93100F1BD68 /* PeriodicTableJSON.json */,
 				2B2F612A2199B5EC005C7465 /* AppDelegate.swift */,
 				2B2F612C2199B5EC005C7465 /* ViewController.swift */,
 				2B2F612E2199B5EC005C7465 /* Main.storyboard */,
 				2B2F61312199B609005C7465 /* Assets.xcassets */,
 				2B2F61332199B609005C7465 /* LaunchScreen.storyboard */,
 				2B2F61362199B609005C7465 /* Info.plist */,
+				2B25E9F821A2B5B400BB8908 /* Atoms.swift */,
+				2B25E9FA21A2B95400BB8908 /* Molecules.swift */,
+				2B25E9FC21A2F07A00BB8908 /* NobleAtom.swift */,
+				2B25E9FE21A2F9BA00BB8908 /* LigandData.swift */,
+				2B1EE14121A42E36001AC4A6 /* Bond.swift */,
+				2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */,
 			);
 			path = Proteins;
 			sourceTree = "<group>";
@@ -123,6 +145,13 @@
 				2B2F614C2199B60B005C7465 /* Info.plist */,
 			);
 			path = ProteinsUITests;
+			sourceTree = "<group>";
+		};
+		BFD31C5B68DF34E9B79AD5D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2F61522199B60B005C7465 /* Build configuration list for PBXNativeTarget "ProteinsTests" */;
 			buildPhases = (
+				EF1B61964512B4C5E4B2A558 /* [CP] Check Pods Manifest.lock */,
 				2B2F61372199B60B005C7465 /* Sources */,
 				2B2F61382199B60B005C7465 /* Frameworks */,
 				2B2F61392199B60B005C7465 /* Resources */,
@@ -167,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2F61552199B60B005C7465 /* Build configuration list for PBXNativeTarget "ProteinsUITests" */;
 			buildPhases = (
+				51949D1B0639AC2B174A353A /* [CP] Check Pods Manifest.lock */,
 				2B2F61422199B60B005C7465 /* Sources */,
 				2B2F61432199B60B005C7465 /* Frameworks */,
 				2B2F61442199B60B005C7465 /* Resources */,
@@ -232,6 +263,7 @@
 				2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */,
 				2B2F61322199B609005C7465 /* Assets.xcassets in Resources */,
 				2B2F61302199B5EC005C7465 /* Main.storyboard in Resources */,
+				2BF26F3321A6D93100F1BD68 /* PeriodicTableJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +283,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51949D1B0639AC2B174A353A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProteinsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF1B61964512B4C5E4B2A558 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProteinsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B2F61232199B5EC005C7465 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2B2F612D2199B5EC005C7465 /* ViewController.swift in Sources */,
+				2B25E9F921A2B5B400BB8908 /* Atoms.swift in Sources */,
+				2BF26F3121A6CD8300F1BD68 /* ElementInfo.swift in Sources */,
 				2B2F612B2199B5EC005C7465 /* AppDelegate.swift in Sources */,
+				2B1EE14221A42E36001AC4A6 /* Bond.swift in Sources */,
+				2B25E9FD21A2F07A00BB8908 /* NobleAtom.swift in Sources */,
+				2B25E9FF21A2F9BA00BB8908 /* LigandData.swift in Sources */,
+				2B25E9FB21A2B95400BB8908 /* Molecules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

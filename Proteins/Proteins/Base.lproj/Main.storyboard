@@ -16,12 +16,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nJ-Hm-yjm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-A6-nCo">
+                                <rect key="frame" x="16" y="69" width="69" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="S2W-kV-Nvt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-WX-0BL">
+                                <rect key="frame" x="254" y="69" width="105" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="xD5-qF-xLB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4nJ-Hm-yjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3cb-Lv-aa2"/>
+                            <constraint firstItem="eOe-WX-0BL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5tf-S7-I4H"/>
+                            <constraint firstItem="uY6-A6-nCo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DxC-TP-kAy"/>
+                            <constraint firstItem="4nJ-Hm-yjm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HKv-ly-Yic"/>
+                            <constraint firstItem="uY6-A6-nCo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="Pb4-eo-LoT"/>
+                            <constraint firstItem="uY6-A6-nCo" firstAttribute="baseline" secondItem="eOe-WX-0BL" secondAttribute="baseline" id="fa1-DV-FSr"/>
+                            <constraint firstItem="4nJ-Hm-yjm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fzO-V1-Bd2"/>
+                            <constraint firstAttribute="trailing" secondItem="4nJ-Hm-yjm" secondAttribute="trailing" id="hzz-xk-0u6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="elementName" destination="eOe-WX-0BL" id="xJj-UE-cqH"/>
+                        <outlet property="sceneView" destination="4nJ-Hm-yjm" id="k33-1l-aq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
