@@ -95,6 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            TableView.reloadData()
 //            return
 //        }
+        
         currentLigandArr = ligandArr.filter({ ligand -> Bool in
             switch searchBar.selectedScopeButtonIndex {
             case 0:
@@ -120,11 +121,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         case 0:
             currentLigandArr = ligandArr //get all ligands
         case 1:
+            currentLigandArr = ligandArr
             currentLigandArr = currentLigandArr.filter({ ligand -> Bool in
                 //get ligands with just text
                 ligand.category == LigandType.allText
             })
         case 2:
+            currentLigandArr = ligandArr
             currentLigandArr = currentLigandArr.filter({ ligand -> Bool in
                 //get ligands with just number
                 ligand.category == LigandType.allNum
