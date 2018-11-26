@@ -19,6 +19,7 @@
 		2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F61332199B609005C7465 /* LaunchScreen.storyboard */; };
 		2B2F61402199B60B005C7465 /* ProteinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F613F2199B60B005C7465 /* ProteinsTests.swift */; };
 		2B2F614B2199B60B005C7465 /* ProteinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */; };
+		2BC52E1321AC06A10080AED3 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC52E1221AC06A10080AED3 /* img.png */; };
 		2BF26F3121A6CD8300F1BD68 /* ElementInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */; };
 		2BF26F3321A6D93100F1BD68 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BF26F3221A6D93100F1BD68 /* PeriodicTableJSON.json */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		2B2F61462199B60B005C7465 /* ProteinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProteinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsUITests.swift; sourceTree = "<group>"; };
 		2B2F614C2199B60B005C7465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC52E1221AC06A10080AED3 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img.png; path = ../../../../Downloads/img.png; sourceTree = "<group>"; };
 		2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementInfo.swift; sourceTree = "<group>"; };
 		2BF26F3221A6D93100F1BD68 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				2B25E9FE21A2F9BA00BB8908 /* LigandData.swift */,
 				2B1EE14121A42E36001AC4A6 /* Bond.swift */,
 				2BF26F3021A6CD8300F1BD68 /* ElementInfo.swift */,
+				2BC52E1221AC06A10080AED3 /* img.png */,
 			);
 			path = Proteins;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC52E1321AC06A10080AED3 /* img.png in Resources */,
 				2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */,
 				2B2F61322199B609005C7465 /* Assets.xcassets in Resources */,
 				2B2F61302199B5EC005C7465 /* Main.storyboard in Resources */,

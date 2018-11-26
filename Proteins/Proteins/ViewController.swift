@@ -8,12 +8,16 @@
 
 import UIKit
 import SceneKit
+import Social
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var elementName: UILabel!
+    @IBOutlet weak var ligandName: UILabel!
     @IBOutlet weak var sceneView: SCNView!
+    
     let data = LigandData()
+    var thisData: String?
     //Touch nodes
     var oldNode: SCNNode?
     var element: Element?
@@ -21,6 +25,21 @@ class ViewController: UIViewController {
     var geometryNode: SCNNode = SCNNode()
     // Gestures
     var currentAngle: Float = 0.0
+    
+    @IBAction func shareButton(_ sender: Any) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        var image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        print("ScreenShot")
+//        let activityController = UIActivityViewController(activityItems: [elementName.text!], applicationActivities: nil)
+//        present(activityController, animated: true, completion: nil)
+    }
+    
+    func showAlert(service: String) {
+    }
     
     func segmentValueChanged(info: String) {
         geometryNode.removeFromParentNode()
@@ -31,12 +50,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        elementName.text = ""
-        sceneSetup()
+        elementName.text = "Element"
+        ligandName.text = "Ligand"
+        switch UIDevice.current.orientation {
+        case .portrait:
+            sceneSetup(orientation: "Portrait")
+        case .landscapeLeft:
+            sceneSetup(orientation: "Landscape")
+        case .landscapeRight:
+            sceneSetup(orientation: "Landscape")
+        default:
+            sceneSetup(orientation: "Landscape")
+        }
         data.getLigand(ligand: "001", completionHandler: { (response) in
             DispatchQueue.main.async {
                 if let _data = response {
                     self.segmentValueChanged(info: _data)
+                    self.thisData = _data
                 } else {
                     print("nil")
                 }
@@ -71,14 +101,45 @@ class ViewController: UIViewController {
         }
     }
     
-    func sceneSetup() {
+    let cameraNode = SCNNode()
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        switch UIDevice.current.orientation{
+        case .portrait:
+            sceneSetup(orientation: "Portrait")
+            self.segmentValueChanged(info: self.thisData!)
+            break
+        case .portraitUpsideDown:
+            sceneSetup(orientation: "Portrait")
+            self.segmentValueChanged(info: self.thisData!)
+            break
+        case .landscapeLeft:
+            sceneSetup(orientation: "Landscape")
+            self.segmentValueChanged(info: self.thisData!)
+            break
+        case .landscapeRight:
+            sceneSetup(orientation: "Landscape")
+            self.segmentValueChanged(info: self.thisData!)
+            break
+        default:
+            sceneSetup(orientation: "Landscape")
+            self.segmentValueChanged(info: self.thisData!)
+        }
+    }
+    
+    func sceneSetup(orientation: String) {
+        cameraNode.removeFromParentNode()
+        sceneView.scene = nil
         let scene = SCNScene()
         
-        let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3Make(0, 0, 30)
-        scene.rootNode.addChildNode(cameraNode)
-        
+        if orientation == "Portrait" {
+            cameraNode.position = SCNVector3Make(0, 0, 30)
+            scene.rootNode.addChildNode(cameraNode)
+        } else {
+            cameraNode.position = SCNVector3Make(0, 0, 20)
+            scene.rootNode.addChildNode(cameraNode)
+        }
         sceneView.scene = scene
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true
