@@ -45,12 +45,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private func setSearchBar() {
         searchBar.delegate = self
     }
+    
+    func containsOnlyLetters(input: String) -> Bool {
+        for chr in input.characters {
+            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") ) {
+                return false
+            }
+        }
+        return true
+    }
+    
     private func setLigands() {
         for i in 0..<ligFile.count {
-            ligandArr.append(Ligand(name: ligFile[i], image: genRand()))
+            if let num = Int(ligFile[i]) {
+                ligandArr.append(Ligand(name: ligFile[i], category: .allNum, image: genRand()))
+            } else if containsOnlyLetters(input: ligFile[i]) {
+                ligandArr.append(Ligand(name: ligFile[i], category: .allText, image: genRand()))
+            } else {
+                ligandArr.append(Ligand(name: ligFile[i], category: .all, image: genRand()))
+            }
         }
         currentLigandArr = ligandArr
-
+        print(ligandArr)
+        print(ligFile)
+        print(currentLigandArr)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,13 +90,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     //search barr
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard !searchText.isEmpty else {
-            currentLigandArr = ligandArr
-            TableView.reloadData()
-            return
-        }
+//        guard !searchText.isEmpty else {
+//            currentLigandArr = ligandArr
+//            TableView.reloadData()
+//            return
+//        }
         currentLigandArr = ligandArr.filter({ ligand -> Bool in
-            return ligand.name.lowercased().contains(searchText.lowercased())
+            switch searchBar.selectedScopeButtonIndex {
+            case 0:
+                if searchText.isEmpty { return true }
+                return ligand.name.lowercased().contains(searchText.lowercased())
+            case 1:
+                if searchText.isEmpty { return ligand.category == .allText }
+                return ligand.name.lowercased().contains(searchText.lowercased()) &&
+                ligand.category == .allText
+            case 2:
+                if searchText.isEmpty { return ligand.category == .allNum }
+                return ligand.name.lowercased().contains(searchText.lowercased()) &&
+                ligand.category == .allNum
+            default:
+                return false
+            }
         })
         TableView.reloadData()
     }
@@ -88,17 +120,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         case 0:
             currentLigandArr = ligandArr //get all ligands
         case 1:
-            currentLigandArr = ligandArr
-//            currentLigandArr = currentLigandArr.filter({ textLigand -> Bool in
-//                //get ligands with just text
-//                return
-//            })
+            currentLigandArr = currentLigandArr.filter({ ligand -> Bool in
+                //get ligands with just text
+                ligand.category == LigandType.allText
+            })
         case 2:
-            currentLigandArr = ligandArr
-//            currentLigandArr = currentLigandArr.filter({ numLigand -> Bool in
-//                //get ligands with just number
-//                return
-//            })
+            currentLigandArr = currentLigandArr.filter({ ligand -> Bool in
+                //get ligands with just number
+                ligand.category == LigandType.allNum
+            })
         default:
             break
         }
@@ -108,10 +138,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 class Ligand {
     let name : String
+    let category : LigandType
     let image : String
     
-    init(name: String, image: String) {
+    init(name: String, category: LigandType, image: String) {
         self.name = name
+        self.category = category
         self.image = image
     }
+}
+
+enum LigandType: String {
+    case allText = "allText"
+    case allNum = "allNum"
+    case all = "all"
 }
