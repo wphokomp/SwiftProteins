@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0C85DE21AD569C00633805 /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85DD21AD569C00633805 /* Ligand.swift */; };
+		2B0C85E021AD575300633805 /* LigandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85DF21AD575300633805 /* LigandType.swift */; };
+		2B0C85E221AD582700633805 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E121AD582700633805 /* Element.swift */; };
+		2B0C85E521AD591700633805 /* ElementInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E421AD591700633805 /* ElementInformation.swift */; };
+		2B0C85E721AD617200633805 /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E621AD617200633805 /* Atoms.swift */; };
+		2B0C85E921AD62B500633805 /* Molecule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E821AD62B500633805 /* Molecule.swift */; };
+		2B0C85EB21AD62E000633805 /* Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85EA21AD62E000633805 /* Bond.swift */; };
+		2B0C85ED21AD65E700633805 /* LigandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85EC21AD65E700633805 /* LigandModel.swift */; };
+		2B0C85EF21AD67AE00633805 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C85EE21AD67AE00633805 /* PeriodicTableJSON.json */; };
+		2B0C85F521AD825600633805 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F421AD825600633805 /* SearchController.swift */; };
+		2B0C85F721AD828D00633805 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F621AD828D00633805 /* LoginViewController.swift */; };
+		2B0C85F921AD8F5C00633805 /* LigandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F821AD8F5C00633805 /* LigandCell.swift */; };
+		2B0C85FB21AD9DAD00633805 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C85FA21AD9DAD00633805 /* ligands.txt */; };
 		2B2F612B2199B5EC005C7465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F612A2199B5EC005C7465 /* AppDelegate.swift */; };
-		2B2F612D2199B5EC005C7465 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F612C2199B5EC005C7465 /* ViewController.swift */; };
 		2B2F61302199B5EC005C7465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F612E2199B5EC005C7465 /* Main.storyboard */; };
 		2B2F61322199B609005C7465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F61312199B609005C7465 /* Assets.xcassets */; };
 		2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F61332199B609005C7465 /* LaunchScreen.storyboard */; };
@@ -34,9 +46,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0C85DD21AD569C00633805 /* Ligand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
+		2B0C85DF21AD575300633805 /* LigandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandType.swift; sourceTree = "<group>"; };
+		2B0C85E121AD582700633805 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		2B0C85E421AD591700633805 /* ElementInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementInformation.swift; sourceTree = "<group>"; };
+		2B0C85E621AD617200633805 /* Atoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atoms.swift; sourceTree = "<group>"; };
+		2B0C85E821AD62B500633805 /* Molecule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecule.swift; sourceTree = "<group>"; };
+		2B0C85EA21AD62E000633805 /* Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bond.swift; sourceTree = "<group>"; };
+		2B0C85EC21AD65E700633805 /* LigandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandModel.swift; sourceTree = "<group>"; };
+		2B0C85EE21AD67AE00633805 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
+		2B0C85F421AD825600633805 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		2B0C85F621AD828D00633805 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2B0C85F821AD8F5C00633805 /* LigandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCell.swift; sourceTree = "<group>"; };
+		2B0C85FA21AD9DAD00633805 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		2B2F61272199B5EC005C7465 /* Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2F612A2199B5EC005C7465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B2F612C2199B5EC005C7465 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B2F612F2199B5EC005C7465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B2F61312199B609005C7465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B2F61342199B609005C7465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +98,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0C85DC21AD561E00633805 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C85DD21AD569C00633805 /* Ligand.swift */,
+				2B0C85DF21AD575300633805 /* LigandType.swift */,
+				2B0C85E121AD582700633805 /* Element.swift */,
+				2B0C85F821AD8F5C00633805 /* LigandCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B0C85E321AD58B100633805 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C85E421AD591700633805 /* ElementInformation.swift */,
+				2B0C85E621AD617200633805 /* Atoms.swift */,
+				2B0C85E821AD62B500633805 /* Molecule.swift */,
+				2B0C85EA21AD62E000633805 /* Bond.swift */,
+				2B0C85EC21AD65E700633805 /* LigandModel.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		2B0C85F021AD81DD00633805 /* Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C85F421AD825600633805 /* SearchController.swift */,
+				2B0C85F621AD828D00633805 /* LoginViewController.swift */,
+			);
+			path = Cotrollers;
+			sourceTree = "<group>";
+		};
 		2B2F611E2199B5EC005C7465 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +153,16 @@
 		2B2F61292199B5EC005C7465 /* Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				2B0C85F021AD81DD00633805 /* Cotrollers */,
+				2B0C85E321AD58B100633805 /* Control */,
+				2B0C85DC21AD561E00633805 /* Model */,
 				2B2F612A2199B5EC005C7465 /* AppDelegate.swift */,
-				2B2F612C2199B5EC005C7465 /* ViewController.swift */,
+				2B0C85EE21AD67AE00633805 /* PeriodicTableJSON.json */,
 				2B2F612E2199B5EC005C7465 /* Main.storyboard */,
 				2B2F61312199B609005C7465 /* Assets.xcassets */,
 				2B2F61332199B609005C7465 /* LaunchScreen.storyboard */,
 				2B2F61362199B609005C7465 /* Info.plist */,
+				2B0C85FA21AD9DAD00633805 /* ligands.txt */,
 			);
 			path = Proteins;
 			sourceTree = "<group>";
@@ -193,6 +253,7 @@
 				TargetAttributes = {
 					2B2F61262199B5EC005C7465 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					2B2F613A2199B60B005C7465 = {
 						CreatedOnToolsVersion = 10.0;
@@ -230,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */,
+				2B0C85FB21AD9DAD00633805 /* ligands.txt in Resources */,
 				2B2F61322199B609005C7465 /* Assets.xcassets in Resources */,
 				2B2F61302199B5EC005C7465 /* Main.storyboard in Resources */,
+				2B0C85EF21AD67AE00633805 /* PeriodicTableJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +319,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B2F612D2199B5EC005C7465 /* ViewController.swift in Sources */,
+				2B0C85F521AD825600633805 /* SearchController.swift in Sources */,
+				2B0C85E021AD575300633805 /* LigandType.swift in Sources */,
+				2B0C85E721AD617200633805 /* Atoms.swift in Sources */,
+				2B0C85DE21AD569C00633805 /* Ligand.swift in Sources */,
+				2B0C85ED21AD65E700633805 /* LigandModel.swift in Sources */,
 				2B2F612B2199B5EC005C7465 /* AppDelegate.swift in Sources */,
+				2B0C85EB21AD62E000633805 /* Bond.swift in Sources */,
+				2B0C85E221AD582700633805 /* Element.swift in Sources */,
+				2B0C85E521AD591700633805 /* ElementInformation.swift in Sources */,
+				2B0C85E921AD62B500633805 /* Molecule.swift in Sources */,
+				2B0C85F921AD8F5C00633805 /* LigandCell.swift in Sources */,
+				2B0C85F721AD828D00633805 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +505,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Proteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ProteinGro.Proteins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +525,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Proteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
