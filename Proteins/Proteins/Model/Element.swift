@@ -9,6 +9,10 @@
 import Foundation
 
 struct Element : Decodable {
-    let name : String?
-    let symbol : String?
+    let elements: [ElementCollection]?
+}
+
+struct ElementCollection : Decodable {
+    let name: String?
+    let symbol: String?
 }

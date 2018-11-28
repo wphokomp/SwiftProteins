@@ -8,10 +8,9 @@
 
 import UIKit
 
-class SearchController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-
-    @IBOutlet weak var searchBar: UISearchBar!
+class SearchController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var ligandList: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedLigand = 0
     var ligandArr = [Ligand]()
@@ -20,8 +19,20 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //setSearchBar()
+        getLigandsFromFile()
+        setLigands()
+        ligandList.delegate = self
+        ligandList.dataSource = self
+        setSearchBar()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ligandViewController = segue.destination as! LigandViewController
+        ligandViewController.ligand = currentLigandArr[selectedLigand].name
+    }
+    
+    private func setSearchBar() {
         searchBar.delegate = self
     }
     
@@ -48,7 +59,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         return true
     }
     
-    private func seltLigands() {
+    private func setLigands() {
         for i in 0..<ligFile.count {
             if let _ = Int(ligFile[i]) {
                 ligandArr.append(Ligand(_name: ligFile[i], _category: .allNum))
@@ -61,36 +72,21 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         currentLigandArr = ligandArr
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentLigandArr.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LigandCell") as? LigandCell else {
-            return UITableViewCell()
-        }
-        cell.ligandName.text = currentLigandArr[indexPath.row].name
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedLigand = indexPath.row
-        print(currentLigandArr[selectedLigand].name)
-        //PerformSegue
-    }
-    
+    //HANLE SEARCH BAR
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        currentLigandArr = ligandArr.filter({ (ligand) -> Bool in
+        currentLigandArr = ligandArr.filter({ ligand -> Bool in
             switch searchBar.selectedScopeButtonIndex {
             case 0:
                 if searchText.isEmpty { return true }
                 return ligand.name.lowercased().contains(searchText.lowercased())
             case 1:
                 if searchText.isEmpty { return ligand.category == .allText }
-                return ligand.name.lowercased().contains(searchText.lowercased()) && ligand.category == .allText
+                return ligand.name.lowercased().contains(searchText.lowercased()) &&
+                    ligand.category == .allText
             case 2:
                 if searchText.isEmpty { return ligand.category == .allNum }
-                return ligand.name.lowercased().contains(searchText.lowercased()) && ligand.category == .allNum
+                return ligand.name.lowercased().contains(searchText.lowercased()) &&
+                    ligand.category == .allNum
             default:
                 return false
             }
@@ -106,7 +102,7 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
             currentLigandArr = ligandArr
             currentLigandArr = currentLigandArr.filter({ ligand -> Bool in
                 //get ligands with just text
-            ligand.category == LigandType.allText
+                ligand.category == LigandType.allText
             })
         case 2:
             currentLigandArr = ligandArr
@@ -127,4 +123,24 @@ class SearchController: UIViewController, UITableViewDataSource, UITableViewDele
         self.present(alert, animated: true, completion: nil)
     }
 
+}
+
+extension SearchController: UITableViewDataSource, UITableViewDelegate {
+    //TableViewControlls
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currentLigandArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LigandCell") as? LigandCell else {
+            return UITableViewCell()
+        }
+        cell.ligandName.text = currentLigandArr[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedLigand = indexPath.row
+        self.performSegue(withIdentifier: "DrawLigand", sender: self)
+    }
 }

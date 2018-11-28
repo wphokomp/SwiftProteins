@@ -26,6 +26,7 @@
 		2B2F61352199B609005C7465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F61332199B609005C7465 /* LaunchScreen.storyboard */; };
 		2B2F61402199B60B005C7465 /* ProteinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F613F2199B60B005C7465 /* ProteinsTests.swift */; };
 		2B2F614B2199B60B005C7465 /* ProteinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */; };
+		2BCA75BE21AE7FE600685605 /* LigandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA75BD21AE7FE600685605 /* LigandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		2B2F61462199B60B005C7465 /* ProteinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProteinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2F614A2199B60B005C7465 /* ProteinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsUITests.swift; sourceTree = "<group>"; };
 		2B2F614C2199B60B005C7465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BCA75BD21AE7FE600685605 /* LigandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				2B0C85F421AD825600633805 /* SearchController.swift */,
 				2B0C85F621AD828D00633805 /* LoginViewController.swift */,
+				2BCA75BD21AE7FE600685605 /* LigandViewController.swift */,
 			);
 			path = Cotrollers;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				2B0C85E521AD591700633805 /* ElementInformation.swift in Sources */,
 				2B0C85E921AD62B500633805 /* Molecule.swift in Sources */,
 				2B0C85F921AD8F5C00633805 /* LigandCell.swift in Sources */,
+				2BCA75BE21AE7FE600685605 /* LigandViewController.swift in Sources */,
 				2B0C85F721AD828D00633805 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
