@@ -15,6 +15,7 @@ class LigandViewController: UIViewController {
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var ligandName: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let data = LigandModel()
     let cameraNode = SCNNode()
@@ -29,6 +30,7 @@ class LigandViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         ligandName.text = ligand
         switch UIDevice.current.orientation {
         case .portrait:
@@ -137,6 +139,8 @@ class LigandViewController: UIViewController {
         currentAngle = 0.0
         geometryNode = Molecules.drawLigand(specs: specs)
         sceneView.scene!.rootNode.addChildNode(geometryNode)
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
 
 }

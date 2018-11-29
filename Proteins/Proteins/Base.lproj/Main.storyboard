@@ -74,6 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="NM2-AY-KQc"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="loginButton" destination="jgl-Fr-AAd" id="6CM-fB-jMd"/>
                         <outlet property="password" destination="3di-sX-Qu5" id="OQH-JF-Cnl"/>
@@ -182,6 +183,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="e57-3Z-qhM">
+                                <rect key="frame" x="177" y="380" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -202,6 +208,7 @@
                         <viewLayoutGuide key="safeArea" id="ZdF-wJ-xOA"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="e57-3Z-qhM" id="Li0-zG-xyC"/>
                         <outlet property="elementName" destination="Bsa-1e-ieH" id="1uk-Km-l7K"/>
                         <outlet property="ligandName" destination="xrN-Da-Mky" id="rch-ki-Z34"/>
                         <outlet property="sceneView" destination="w3T-lq-owm" id="bIN-ZI-Dmh"/>
