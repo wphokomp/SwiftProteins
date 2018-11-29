@@ -8,6 +8,7 @@
 
 import UIKit
 
+var _ligandName: String!
 class SearchController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var ligandList: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -16,6 +17,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     var ligandArr = [Ligand]()
     var currentLigandArr = [Ligand]()
     var ligFile = [String]()
+    var refreshTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,23 @@ class SearchController: UIViewController, UISearchBarDelegate {
         ligandList.delegate = self
         ligandList.dataSource = self
         setSearchBar()
+        
+        refreshTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.backgroundCheck), userInfo: nil, repeats: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ligandViewController = segue.destination as! LigandViewController
-        ligandViewController.ligand = currentLigandArr[selectedLigand].name
+    @objc func backgroundCheck() {
+        let state = UIApplication.shared.applicationState
+        if state == .background {
+            
+            //            self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+            self.performSegue(withIdentifier: "GoBack_", sender: self.navigationController)
+        }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let ligandViewController = segue.destination as! LigandViewController
+//        ligandViewController.ligand = currentLigandArr[selectedLigand].name
+//    }
     
     private func setSearchBar() {
         searchBar.delegate = self
@@ -141,6 +154,7 @@ extension SearchController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedLigand = indexPath.row
+        _ligandName = currentLigandArr[selectedLigand].name
         self.performSegue(withIdentifier: "DrawLigand", sender: self)
     }
 }

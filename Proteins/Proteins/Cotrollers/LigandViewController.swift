@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 class LigandViewController: UIViewController {
-    var ligand: String!
+    var ligand = _ligandName
     
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var sceneView: SCNView!
@@ -27,6 +27,7 @@ class LigandViewController: UIViewController {
     var geometryNode: SCNNode = SCNNode()
     // Gestures
     var currentAngle: Float = 0.0
+    var refreshTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class LigandViewController: UIViewController {
         default:
             sceneSetup(orientation: "Landscape")
         }
-        data.getModel(ligand: ligand, completionHandler: { (response) in
+        data.getModel(ligand: ligand!, completionHandler: { (response) in
             DispatchQueue.main.async {
                 if let _data = response {
                     self.ligandSelected(specs: _data)
@@ -53,6 +54,15 @@ class LigandViewController: UIViewController {
             }
         })
         self.element = GetElementDetails().getDetails()
+        
+        refreshTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.backgroundCheck), userInfo: nil, repeats: true)
+    }
+    
+    @objc func backgroundCheck() {
+        let state = UIApplication.shared.applicationState
+        if state == .background {
+            self.performSegue(withIdentifier: "GoBack", sender: self.navigationController)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

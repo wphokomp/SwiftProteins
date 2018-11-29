@@ -56,9 +56,28 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    struct AppUtility {
         
+        static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+            
+            if let delegate = UIApplication.shared.delegate as? AppDelegate {
+                delegate.orientationLock = orientation
+            }
+        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        AppUtility.lockOrientation(.all)
+    }
+    
+    
     
     func showAlert(title: String, message: String, actionTitle: String) {
         let alert = UIAlertController(title: title, message:  message, preferredStyle: .alert)
